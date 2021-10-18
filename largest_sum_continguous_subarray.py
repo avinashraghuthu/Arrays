@@ -1,14 +1,17 @@
 #  http://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
-from sys import maxint
+from sys import maxsize
+
+# Kadane Algorithm
 
 
 def max_sum_sub_arr(arr, arr_size):
-	max_so_far = -maxint -1
+	import ipdb;ipdb.set_trace()
+	max_so_far = -maxsize -1
 	sum_till_now = 0
 	start = 0
 	end = 0
 	s = 0
-	for i in xrange(0, arr_size):
+	for i in range(0, arr_size):
 		sum_till_now += arr[i]
 		if sum_till_now < 0:
 			sum_till_now = 0
@@ -23,6 +26,6 @@ def max_sum_sub_arr(arr, arr_size):
 def test():
 	li = [-2, -3, 4, -1, -2, 1, 5, -3]
 	max_sum, start, end = max_sum_sub_arr(li, len(li))
-	print "max_sum:", max_sum
-	print "start:", start
-	print "end:", end
+	print("max_sum:", max_sum)
+	print("start:", start)
+	print("end:", end)

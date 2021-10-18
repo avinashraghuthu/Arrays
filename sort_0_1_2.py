@@ -20,4 +20,4 @@ def sort_0_1_2(arr, arr_len):
 
 def test():
 	arr = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]
-	print sort_0_1_2(arr, len(arr))
+	print(sort_0_1_2(arr, len(arr)))

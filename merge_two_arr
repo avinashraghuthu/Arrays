@@ -1,0 +1,33 @@
+# https://www.geeksforgeeks.org/merge-two-sorted-arrays-o1-extra-space/
+
+# Check youtube comment https://www.youtube.com/watch?v=NWMcj5QFW74
+
+# I have a simple approach-first sort the both the array a1- 1 5 9 10 15 20
+# a2- 2 3 8 13 then take two pointer i start from last index of a1 & j start from
+# first index of a2 then swap num if  a2[j]<a1[i]then sort both array again
+# Eg swap 2 & 20 ,3 & 15 so on
+
+
+def merge_two_arr(arr1, arr2):
+	arr1.sort()
+	arr2.sort()
+	arr1_len = len(arr1)
+	arr2_len = len(arr2)
+	end_index = arr1_len - 1
+	start_index = 0
+	while end_index >= 0 and start_index < arr2_len:
+		if arr1[end_index] > arr2[start_index]:
+			arr1[end_index], arr2[start_index] = arr2[start_index], arr1[end_index]
+		end_index -= 1
+		start_index += 1
+	arr1.sort()
+	arr2.sort()
+
+
+# arr1 = [1 ,5 ,9 ,10 ,15 ,20]
+# arr2 = [2 ,3 ,8 ,13]
+arr1 = [10]
+arr2 = [2, 1]
+merge_two_arr(arr1, arr2)
+print(arr1)
+print(arr2)
